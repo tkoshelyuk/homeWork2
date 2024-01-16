@@ -165,10 +165,12 @@ for (let i=0; i < arrMy3.length; i++)
 
 //11
 const arr4 = [ [1, 2], [3, 4], [5, 6] ];
-for(let i=0; i < arr4.length; i++)
+for(let i= 0; i < arr4.length; i++)
 {
-    console.log(arr4[i][0]);
-    console.log(arr4[i][1]);
+    for(let j= 0;j < arr4[i].length; j++)
+    {
+        console.log(arr4[i][j]);
+    }
 }
 
 //12
@@ -215,18 +217,33 @@ for(let res; res = re.exec(str);) {
 }
 
 //14
-let numberM = 15000;
+let numberM = 1005000;
+let strMt = numberM.toString();
+let lengMt = strMt.length;
+let lastM = parseInt(strMt[lengMt - 1]);
+
 let numberKm = numberM/1000;
 let strKm = (numberKm).toString();
 let lengKm = strKm.length;
 let last = parseInt(strKm[lengKm - 1]);
 
-if(last === 1) {
-    console.log(numberKm + " кілометр");
-} else if(last === 2 || last === 3 || last === 4) {
-    console.log(numberKm + " кілометри");
-} else {
-    console.log(numberKm + " кілометрів");
+if(!Number.isInteger(numberKm)) {
+    if(lastM === 1){
+        console.log(`${numberM} метр`  + ` це ${numberKm} кілометра`);
+    } else if(lastM === 2 || last === 3 || last === 4){
+        console.log(`${numberM} метри`  + ` це ${numberKm} кілометра`);
+    } else {
+        console.log(`${numberM} метрів`  + ` це ${numberKm} кілометра`);
+    }
+}
+else {
+    if (last === 1) {
+        console.log(`${numberM} метрів` + ` це ${numberKm} кілометр`);
+    } else if (last === 2 || last === 3 || last === 4) {
+        console.log(`${numberM} метрів` + ` це ${numberKm} кілометри`);
+    } else {
+        console.log(`${numberM} метрів` + ` це ${numberKm} кілометрів`);
+    }
 }
 
 
