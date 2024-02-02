@@ -1,250 +1,279 @@
 //1
-let hamburger = 4;
-let potatoFree = 1;
+function ifWeAreFull (hamburger, potatoFree){
+    if(hamburger >= 4 && potatoFree >= 1)
+    {
+        return 'Ми поїли';
+    }
+    else {
+        return 'Йдемо в інше місце';
+    }
+}
 
-if(hamburger >= 4 && potatoFree >= 1)
-{
-    console.log('Ми поїли');
-}
-else {
-    console.log('Йдемо в інше місце');
-}
+console.log(ifWeAreFull(1,2));
 
 //2
-let price = 1500;
-
-if(price >= 1000 && price <= 1900)
-{
-    console.log(price);
+function isPriceInRange(price){
+    if(price >= 1000 && price <= 1900)
+    {
+        return 'Price is in range'
+    } else {
+        return 'Price is not in range'
+    }
 }
+
+console.log(isPriceInRange(1005));
 
 //3
-let price2 = 2000;
-
-if(!(price2 >= 1000 && price2 <= 1900))
+function isPriceGoodInRange(price)
 {
-    console.log(price2);
+    if(!(price >= 1000 && price <= 1900))
+    {
+        return 'Price is in range';
+    } else {
+        return 'Price is not in range';
+    }
 }
 
-if(price2 < 1000 || price2 > 1900)
+function isPriceGoodInRange2(price)
 {
-    console.log(price2);
+    if(price < 1000 || price > 1900)
+    {
+        return 'Price is in range';
+    } else {
+        return 'Price is not in range';
+    }
 }
+
+console.log(isPriceGoodInRange(1005));
+console.log(isPriceGoodInRange2(1005));
 
 
 //4
-let season = 4;
-
-if (season===1) {
-    console.log('Winter');
-} else if(season===2) {
-    console.log('Spring');
-} else if (season===3) {
-    console.log('Summer');
-} else if (season===4) {
-    console.log('Autumn');
-} else {
-    console.log('Not a season');
+function printSeason(seas){
+    if (seas===1) {
+        return 'Winter';
+    } else if(seas===2) {
+        return 'Spring';
+    } else if (seas===3) {
+        return 'Summer';
+    } else if (seas===4) {
+        return 'Autumn';
+    } else {
+        return 'Not a season';
+    }
 }
+
+console.log(printSeason(13));
 
 //5
-let a = 600;
-let b = 40;
-let c = 100;
+function findMedNumber(a, b, c){
+    if(a > b && a < c || a > c && a < b) {
+        return a;
+    } else if(b > a && b < c || b > c && b < a) {
+        return b;
+    } else {
+        return c;
+    }
+}
 
-if(a > b && a < c || a > c && a < b)
-{
-    console.log(a + ' is middle value');
-} else if(b > a && b < c || b > c && b < a) {
-    console.log(b + ' is middle value');
-}
-else {
-    console.log(c + ' is middle value');
-}
+console.log(`${findMedNumber(6,4,5)} is middle value`);
 
 
 //6
-let dayNum = 3;
-
-switch(dayNum)
+function printWeekDay (dayNum)
 {
-    case 1:
-        console.log('Monday');
-        break;
+    switch(dayNum)
+    {
+        case 1:
+            return 'Monday';
 
-     case 2:
-        console.log('Tuesday');
-        break;
+        case 2:
+            return 'Tuesday';
 
-     case 3:
-        console.log('Wednesday');
-        break;
+        case 3:
+            return 'Wednesday';
 
-     case 4:
-        console.log('Thurthday');
-        break;
+        case 4:
+            return 'Thurthday';
 
-     case 5:
-        console.log('Friday');
-        break;
+        case 5:
+            return 'Friday';
 
-     case 6:
-        console.log('Saturday');
-        break;
+        case 6:
+            return 'Saturday';
 
-     case 7:
-        console.log('Sunday');
-        break;
+        case 7:
+            return 'Sunday';
 
-     default:
-        console.log('Not a day');
-        break;
+        default:
+            return 'Not a day';
+    }
 }
+
+console.log(printWeekDay(7));
 
 //7  "+", "-", "*", "/"
+function calculations (mathSym, oneParam, secParam) {
+    switch(mathSym){
+        case '+':
+            return (oneParam + secParam);
 
-let mathSym = '+'
-let oneParam = 1
-let secParam = 5
+        case '-':
+            return (oneParam - secParam);
 
-switch(mathSym){
-    case '+':
-        console.log('Result = ' + (oneParam + secParam));
-        break;
-    case '-':
-        console.log('Result = ' + (oneParam - secParam));
-        break;
-    case '*':
-        console.log('Result = ' + (oneParam * secParam));
-        break;
-    case '/':
-        console.log('Result = ' + (oneParam / secParam));
-        break;
-    default:
-        console.log('Not operation');
-        break;
+        case '*':
+            return (oneParam * secParam);
+
+        case '/':
+            return (oneParam / secParam);
+
+        default:
+            return 'Not operation';
+    }
 }
+
+console.log(`Result is: ${calculations('*', 1, 2)}`)
 
 
 //8
-let arrNum = [];
-for (let i= 1; i <= 5; i++)
-{
-    arrNum.push(i);
+function makeArr () {
+    let arrNum = [];
+    for (let i= 1; i <= 5; i++)
+    {
+        arrNum.push(i);
+    }
+    return arrNum;
 }
-console.log('Array: ' + arrNum);
+
+console.log('Array: ' + makeArr());
 
 //9
-let evenNumbers = [];
-for (let i= 1; i <= 9; i++)
-{
-    if(i % 2 === 0) {
-        evenNumbers.push(i);
+function setEven(){
+    let evenNumbers = [];
+    for (let i= 1; i <= 9; i++)
+    {
+        if(i % 2 === 0) {
+            evenNumbers.push(i);
+        }
     }
+    return evenNumbers;
 }
 
-let oddNumbers = [];
-for (let i= 1 ; i <= 9 ; i++)
-{
-    if(i % 2 !== 0){
-        oddNumbers.push(i);
+function setOdd(){
+    let oddNumbers = [];
+    for (let i= 1 ; i <= 9 ; i++)
+    {
+        if(i % 2 !== 0){
+            oddNumbers.push(i);
+        }
     }
+    return oddNumbers;
 }
 
-console.log('Even: ' + evenNumbers);
-console.log('Odd: ' + oddNumbers);
+console.log(`Even: ${setEven()}`);
+console.log(`Odd: ${setOdd()}`);
 
 //10
-let total = 0;
-let arrMy3 = [2,3,4,5,6]
+function arraySumm (array){
+    let total = 0;
 
-for (let i=0; i < arrMy3.length; i++)
-{
-    total = total + arrMy3[i];
+    for (let i=0; i < array.length; i++)
+    {
+        total = total + array[i];
+    }
+
+    return total;
 }
+console.log(`Sum is ${arraySumm([12,7,4,5,6])}`)
 
 //11
-const arr4 = [ [1, 2], [3, 4], [5, 6] ];
-for(let i= 0; i < arr4.length; i++)
-{
-    for(let j= 0;j < arr4[i].length; j++)
+function arrayPrint(array){
+    for(let i= 0; i < array.length; i++)
     {
-        console.log(arr4[i][j]);
+        for(let j= 0;j < array[i].length; j++)
+        {
+            console.log(array[i][j]);
+        }
     }
 }
+
+arrayPrint([ [1, 2], [3, 4], [5, 6] ]);
 
 //12
 //12-a
-const arr5 = [[1], [2], [3]]
-let numResult = 1;
-for(let i= 0; i < arr5.length; i++)
-{
-    numResult = numResult*arr5[i];
+function multiplyArrayValues(array){
+    let numResult = 1;
+    for(let i= 0; i < array.length; i++)
+    {
+        numResult = numResult*array[i];
+    }
+    return numResult;
 }
-console.log("Result is: " + numResult);
+
+console.log(`Result is: ${multiplyArrayValues([[1], [2], [3]])}`);
 
 //12-b
 
-const arr6 = [[1, 2], [3, 4], [5, 6, 7]]
-let numResult2 = 1;
+function multiplyArrayValues2(array){
+    let numResult2 = 1;
 
-for(let i= 0; i < arr6.length; i++)
-{
-    for(let j= 0;j < arr6[i].length; j++)
+    for(let i= 0; i < array.length; i++)
     {
-        numResult2 = numResult2*arr6[i][j];
+        for(let j= 0;j < array[i].length; j++)
+        {
+            numResult2 = numResult2*array[i][j];
+        }
     }
+    return numResult2;
 }
-console.log("Result is: " + numResult2);
+
+console.log(`Result is: ${multiplyArrayValues2([[1, 2], [3, 4], [5, 6, 7]])}`);
 
 
 
 //13
-let str = 'appepl asd qwe zd xc vert rty fgf sdfsdfs df ewwwwwwaaaaa';
-const re = new RegExp('(.*)?[eouia](.*)');
+function removeVowelFromString(str){
+    const regularExp = new RegExp('(.*)?[eouia](.*)');
+    for(let res; (res = regularExp.exec(str));) {
+        let left = res[1];
+        let right = res[2];
 
-for(let res; res = re.exec(str);) {
-    let left = res[1];
-    let right = res[2];
+        str = left ? left : "";
+        str += right ? right : "";
 
-    console.log('String IN: ' + str);
-    console.log('Group 1: ' + left);
-    console.log('Group 2: ' + right);
-
-    str = left ? left : "";
-    str += right ? right : "";
-    console.log('String OUT: ' + str);
+    }
+    return str;
 }
+
+console.log(`Result is : ${removeVowelFromString('appepl asd qwe zd xc vert rty fgf sdfsdfs df ewwwwwwaaaaa')}`);
 
 //14
-let numberM = 1005000;
-let strMt = numberM.toString();
-let lengMt = strMt.length;
-let lastM = parseInt(strMt[lengMt - 1]);
+function getNumSuff(numberM){
+    let strKm = numberM.toString();
+    let lengKm = strKm.length;
+    let last = parseInt(strKm[lengKm - 1]);
 
-let numberKm = numberM/1000;
-let strKm = (numberKm).toString();
-let lengKm = strKm.length;
-let last = parseInt(strKm[lengKm - 1]);
-
-if(!Number.isInteger(numberKm)) {
-    if(lastM === 1){
-        console.log(`${numberM} метр`  + ` це ${numberKm} кілометра`);
-    } else if(lastM === 2 || last === 3 || last === 4){
-        console.log(`${numberM} метри`  + ` це ${numberKm} кілометра`);
-    } else {
-        console.log(`${numberM} метрів`  + ` це ${numberKm} кілометра`);
-    }
-}
-else {
     if (last === 1) {
-        console.log(`${numberM} метрів` + ` це ${numberKm} кілометр`);
+        return '';
     } else if (last === 2 || last === 3 || last === 4) {
-        console.log(`${numberM} метрів` + ` це ${numberKm} кілометри`);
+        return 'и';
     } else {
-        console.log(`${numberM} метрів` + ` це ${numberKm} кілометрів`);
+        return 'ів';
+    }
+
+}
+function getKmStr(numberM){
+    let numberKm = numberM/1000;
+
+    if(!Number.isInteger(numberKm)) {
+        return `${numberM} метр${getNumSuff(numberM)} це ${numberKm} кілометра` ;
+    }
+    else {
+        return `${numberM} метрів це ${numberKm} кілометр${getNumSuff(numberKm)}` ;
     }
 }
+
+console.log(getKmStr(1001));
 
 
 
